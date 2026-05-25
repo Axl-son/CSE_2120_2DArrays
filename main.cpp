@@ -6,10 +6,10 @@ using namespace std;
 bool UniqueWaterGen = false;
 
 // - - - - - - - - - -
-void ResetMap();
-void ScatterRocks();
-void DrawWater(int density);
-void PrintMap();
+void ResetMap(); // makes everything on the map ' '
+void ScatterRocks(); // randomly places rocks
+void DrawWater(int density); // draws water
+void PrintMap(); // displays water... duhh...
 
 
 char Map[20][20];
@@ -70,8 +70,8 @@ void DrawWater(int density) // lowkey have no idea why this makes the water the 
 
             for (int row = 0; row < density; row++) {
 
-                int effectWidth = rand() % 4;
-                int offsetWidth = rand() % 4;
+                int effectWidth = rand() % 4; // random to effect the water's width
+                int offsetWidth = rand() % 4; // random to effect the water's offset
 
 
 
@@ -93,12 +93,12 @@ void DrawWater(int density) // lowkey have no idea why this makes the water the 
 
                 if (!UniqueWaterGen) {
                     for (int i = 0; i < width; i++) {
-                        Map[origin + row + i + offset][col] = '~';
+                        Map[origin + row + i + offset][col] = '~'; // draw water
 
                     }
                 }
                 else {
-                    Map[origin + row + width + offset][col] = '~';
+                    Map[origin + row + width + offset][col] = '~'; // draw water
                 }
             }
         }
